@@ -1,0 +1,213 @@
+@import url("https://fonts.googleapis.com/css2?family=Poppins:wght@200;300;400;500;600;700&display=swap");
+
+*,
+*::before,
+*::after {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: "Poppins", sans-serif;
+}
+
+:root {
+  --color-blue: #384ef5;
+  --color-dark: #030303;
+  --color-sky-blue: #cdfcff;
+  --color-purple: #cc33cc;
+  --color-pink: #ffdff6;
+  --color-dark-pink: #fe11a7;
+  --color-bg: #121925;
+  --common-padding: 1.5rem 2.5rem;
+  --common-border-radius: 0.6rem;
+}
+
+body {
+  min-width: 100vw;
+  min-height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: var(--color-bg);
+}
+
+.mainHeading {
+  font-size: 2.2rem;
+  margin-bottom: 0.4rem;
+}
+
+.subHeading {
+  font-size: 24px;
+  font-weight: 550;
+}
+
+.text {
+  font-size: 15px;
+}
+
+.btn {
+  text-decoration: none;
+  font-size: 1.2rem;
+  font-weight: 600;
+  width: 100%;
+  display: block;
+  padding: 0.7rem 0;
+  color: #fff;
+}
+
+.container .priceCards {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 3rem;
+}
+
+.container .priceCards .priceCard {
+  /* flex: 0 0 25rem; */
+  max-width: 25rem;
+  background: #fff;
+  border-radius: var(--common-border-radius);
+  text-align: center;
+}
+
+.container .priceCards .priceCard .header {
+  padding: var(--common-padding);
+  text-align: center;
+  border-top-left-radius: var(--common-border-radius);
+  border-top-right-radius: var(--common-border-radius);
+}
+
+.container .priceCards .priceCard:nth-child(1) .header {
+  background-color: var(--color-sky-blue);
+}
+
+.container .priceCards .priceCard:nth-child(2) .header {
+  background-color: var(--color-pink);
+}
+
+.container .priceCards .priceCard:nth-child(1) .header .mainHeading {
+  color: var(--color-blue);
+}
+
+.container .priceCards .priceCard:nth-child(2) .header .mainHeading {
+  color: var(--color-purple);
+}
+
+.priceCard:nth-child(1) .btn {
+  background-color: var(--color-dark);
+}
+
+.priceCard:nth-child(2) .btn {
+  background-color: var(--color-dark-pink);
+}
+
+.container .priceCards .priceCard .bottomBx {
+  padding: var(--common-padding);
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+}
+
+.container ul {
+  text-align: left;
+  display: flex;
+  flex-direction: column;
+  gap: 0.7rem;
+  margin-top: 2rem;
+}
+
+.container ul li {
+  display: flex;
+  align-items: center;
+  gap: 0.6rem;
+}
+
+.container ul li i {
+  color: #59ff59;
+  font-size: 1.6rem;
+  line-height: 0;
+}
+
+/* Range Slider Styling */
+.range-wrapper {
+  position: relative;
+  --size: 40px;
+  height: var(--size);
+  margin-top: 2rem;
+}
+
+.fake-range {
+  position: relative;
+  --width: 0%;
+  pointer-events: none;
+  display: grid;
+  place-items: center;
+}
+
+[type="range"]:focus + .fake-range > .thumb {
+  box-shadow: 0 0 0 3px #fff, 0 0 0 6px var(--color-blue);
+}
+
+.wordsBx{
+    margin-top: -1.4rem;
+}
+
+.track {
+  position: relative;
+  width: 100%;
+  height: 8px;
+  background-color: #eee;
+  border-radius: 100vmax;
+  overflow: hidden;
+}
+
+.filled {
+  position: absolute;
+  width: var(--width);
+  height: 100%;
+  background-color: var(--color-blue);
+}
+
+.thumb {
+  position: absolute;
+  background-color: var(--color-blue);
+  width: var(--size);
+  height: var(--size);
+  left: var(--width);
+  border-radius: 100vmax;
+  display: grid;
+  place-items: center;
+  box-shadow: 0 0 30px 5px rgba(15, 36, 192, 0.429);;
+}
+
+.thumb::before {
+  content: "";
+  position: absolute;
+  top: 50%;
+  left: 4px;
+  transform: translateY(-50%);
+  width: 0;
+  height: 0;
+  border-top: 6px solid transparent;
+  border-bottom: 6px solid transparent;
+  border-right: 6px solid var(--color-pink);
+}
+
+.thumb::after {
+  content: "";
+  position: absolute;
+  top: 50%;
+  right: 4px;
+  transform: translateY(-50%);
+  width: 0;
+  height: 0;
+  border-top: 6px solid transparent;
+  border-bottom: 6px solid transparent;
+  border-left: 6px solid var(--color-pink);
+}
+
+[type="range"] {
+  inset: 0;
+  position: absolute;
+  cursor: pointer;
+  opacity: 0;
+}
